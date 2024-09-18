@@ -10,10 +10,10 @@ typedef struct {
     float salario;
 }Funcionario;
 
-Funcionario* buscarFuncionario(Funcionario funcionaio[], int quantidade, const char* cpfBuscado){
+Funcionario* buscarFuncionario(Funcionario funcionario[], int quantidade, const char* cpfBuscado){
     for(int i = 0; i<quantidade; i++){
-        if(strcmp(funcionaio[i].cpf, cpfBuscado) ==0){
-            return &funcionaio[i]; //vai retornar o ponteiro para o funcionario que tiver o cpf requerido
+        if(strcmp(funcionario[i].cpf, cpfBuscado) ==0){
+            return &funcionario[i]; //vai retornar o ponteiro para o funcionario que tiver o cpf requerido
         }
     }
     return NULL;
@@ -43,7 +43,7 @@ void cadastrarFuncionario(){
         printf("Digite o salario: ");
         scanf("%f", &novoFuncionario.salario);
     }   
-    printf("%s", funcionario.nome)
+    printf("%s", funcionario.nome);
 }
 void executarApp(){
     int operacao = 0;
