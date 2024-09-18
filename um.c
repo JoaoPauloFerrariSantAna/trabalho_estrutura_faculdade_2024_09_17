@@ -124,7 +124,7 @@ void exec_formula() {
 
 void mostrar_opcoes() {
     printf("1. Calcular o maior número entre 3.\n");
-    printf("2. Calcula a expodêncial.\n")
+    printf("2. Calcula a expodêncial.\n");
     printf("3. Calcular uma forma: F(x) = x^2 - 3 + x / 2.\n");
     printf("4. Calcular tabuada de um número.\n");
     printf("5. Achar os números pares dentro de uma matriz 4x5\n");
