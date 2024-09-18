@@ -25,15 +25,15 @@ int achar_primos(int numero) {
 
 int achar_maior(int n1, int n2, int n3) {
     int maior = n1;
-    
+
     if(n2 > maior) {
         maior = n2;
     }
-    
+
     if(n3 > maior) {
         maior = n3;
     }
-    
+
     return maior;
 }
 
@@ -41,14 +41,14 @@ void exec_maior() {
     int num1 = 0;
     int num2 = 0;
     int num3 = 0;
-    
+
     printf("Digite um número: ");
     scanf("%d", &num1);
     printf("Digite um segundo número: ");
     scanf("%d", &num2);
     printf("Digite um terceiro número: ");
     scanf("%d", &num3);
-    
+
     printf("Entre os três números digitados, %d é o maior\n", achar_maior(num1, num2, num3));
 }
 
@@ -56,6 +56,28 @@ void calc_tabuada(float n) {
     for(float i = 0.0f; i <= 10; i++) {
         printf("%.2fx%.2f = %.2f\n", n, i, n * i);
     }
+}
+
+float calc_expodencial(float a, float b) {
+    float resultado = 1.0f;
+
+    for(float i = 0.0f; i < b; i++) {
+        resultado *= a;
+    }
+
+    return resultado;
+}
+
+void exec_expodencial() {
+    float a = 0.0f;
+    printf("A = ");
+    scanf("%f", &a);
+
+    float b = 0.0f;
+    printf("B = ");
+    scanf("%f", &b);
+
+    printf("%.2f^%.2f = %.2f\n", a, b, calc_expodencial(a, b));
 }
 
 void exec_tabuada() {
@@ -93,10 +115,10 @@ float calc_formula(float x) {
 
 void exec_formula() {
     float x = 0.0f;
-    
+
     printf("Dê um valor para \"x\": ");
     scanf("%f", &x);
-    
+
     printf("F(%.2f) = %.2f\n", x, calc_formula(x));
 }
 
@@ -114,6 +136,7 @@ int potencia(int a,int b){//Função para calcular potencia, recebe 2 parâmetro
 
 void mostrar_opcoes() {
     printf("1. Calcular o maior número entre 3.\n");
+    printf("2. Calcula a expodêncial.\n");
     printf("3. Calcular uma forma: F(x) = x^2 - 3 + x / 2.\n");
     printf("4. Calcular tabuada de um número.\n");
     printf("5. Achar os números pares dentro de uma matriz 4x5\n");
@@ -122,7 +145,7 @@ void mostrar_opcoes() {
 
 void executar_app() {
     int op = 0;
-    
+
     do {
         mostrar_opcoes();
 
@@ -132,9 +155,13 @@ void executar_app() {
         switch(op) {
             case 0:
             break;
-            
+
             case 1:
                 exec_maior();
+            break;
+
+            case 2:
+                exec_expodencial();
             break;
             
             case 3:
