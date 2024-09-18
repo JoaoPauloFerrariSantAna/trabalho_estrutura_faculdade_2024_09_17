@@ -37,6 +37,28 @@ int achar_maior(int n1, int n2, int n3) {
     return maior;
 }
 
+/*
+    Função que calcula a potência "b" de um número "a".
+
+    Entrada: dois números: um número e seu expoente.
+    Saida: a pontência do número.
+*/
+int potencia(int a, int b){         //Função para calcular potencia, recebe 2 parâmetros a e b
+    int pot = 1;
+
+    if(b == 0)                      //Na matemática qualquer número elevado a 0 é igual a 1
+        return 1;
+
+    if(b == 1)                      //Na matemática qualquer número elevado a 1 é igual a ele mesmo
+        return a;
+
+    for(int i = 0; i < b; i++) {    //Realiza um laço de repetição aonde a vai ser multiplicado pelo valor que b receber
+        pot = pot * a;
+    }
+
+    return pot;
+}
+
 void exec_maior() {
     int num1 = 0;
     int num2 = 0;
@@ -82,7 +104,7 @@ void exec_expodencial() {
 
 void exec_tabuada() {
     float numero = 0.0f;
-    printf("Tabuada de qual número você quer obter?");
+    printf("Tabuada de qual número você quer obter? ");
     scanf("%f", &numero);
 
     calc_tabuada(numero);
@@ -122,18 +144,14 @@ void exec_formula() {
     printf("F(%.2f) = %.2f\n", x, calc_formula(x));
 }
 
-int potencia(int a,int b){//Função para calcular potencia, recebe 2 parâmetros a e b
-    int pot=1;//Declaração da variável pot que vai receber a função pow
-    if(b==0)//Na matemática qualquer número elevado a 0 é igual a 1
-    return 1;
-    if(b==1)//Na matemática qualquer número elevado a 1 é igual a ele mesmo
-        return a;
-    for(int i=0; i<b; i++){//Realiza um laço de repetição aonde a vai ser multiplicado pelo valor que b receber
-        pot= pot*a;
-    }
-    return pot;
-}
 
+
+/*
+    Função que mostra as opções: o que o usuário pode fazer no aplicativo.
+
+    Entrada: Nenhuma.
+    Saida: Nenhuma.
+*/
 void mostrar_opcoes() {
     printf("1. Calcular o maior número entre 3.\n");
     printf("2. Calcula a expodêncial.\n");
@@ -143,6 +161,13 @@ void mostrar_opcoes() {
     printf("0. Sair.\n");
 }
 
+
+/*
+    Função que é a função principal do aplicativo "um.c".
+
+    Entrada: Nenhuma.
+    Saida: Nenhuma, mas programa é executado.
+*/
 void executar_app() {
     int op = 0;
 
@@ -183,6 +208,13 @@ void executar_app() {
     } while(op != 0);
 }
 
+
+/*
+    Função principal do programa "um.c"
+
+    Entrada: Nada, mas irá executar a função "executar_app".
+    Saida: um número inteiro.
+*/
 int main() {
     executar_app();
     return 0;
