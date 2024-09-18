@@ -1,4 +1,6 @@
-# Trabalho da faculdade (2024/09/17)
+# Trabalho da faculdade (Estrutura de Dados)
+
+Trabalho realizado em conjunção para realizar e obter nota na P1.
 
 ## Membros
 
