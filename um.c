@@ -3,12 +3,24 @@
 
 #include <stdio.h>
 
-int e_primo(int numero) {
-    if(numero % 2 == 0) {
-        return 1;
-    }
+int achar_primos(int numero) {
+	int numeros_primos = 0;
 
-    return 0;
+	for(int i = 1; i < numero; i++) {
+		int divisores = 0;
+
+		for(int j = 1; j < i; j++) {
+			if(i % j == 0) {
+				divisores += 1;
+			}
+		}
+
+		if(divisores <= 2) {
+			numeros_primos += 1;
+		}
+	}
+
+	return numeros_primos;
 }
 
 int achar_maior(int n1, int n2, int n3) {
@@ -56,18 +68,23 @@ void exec_tabuada() {
 
 void exec_matriz() {
     int matriz[4][5];
-    int quantidade_primos = 0;
+	int total_primos = 0;
 
     for(int i = 0; i <= 3; i++) {
-        for(int j = 0; j <= 4; j++) {
-            printf("Digite um número na posição %dx%d: ", i+1, j+1);
-            scanf("%d", &matriz[i][j]);
+		for(int j = 0; j <= 4; j++) {
+			printf("Digite um número na posição %dx%d: ", ++i, ++j);
 
-            quantidade_primos += e_primo(matriz[i][j]); 
-        }
-    }
+			scanf("%d", &matriz[i][j]);
+		}
+	}
 
-    printf("Nesta matriz 4x5 temos um total de %d números primos.\n", quantidade_primos);
+	for(int i = 0; i <= 3; i++) {
+		for(int j = 0; j <= 4; j++) {
+			total_primos += achar_primos(matriz[i][j]);
+		}
+	}
+
+	printf("Nesta matriz 4x5 temos um total de %d números primos.\n", total_primos);
 }
 
 float calc_formula(float x) {
@@ -131,3 +148,4 @@ int main() {
     executar_app();
     return 0;
 }
+
