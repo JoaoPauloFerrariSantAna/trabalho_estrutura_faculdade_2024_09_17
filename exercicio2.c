@@ -1,3 +1,9 @@
+/*Membros
+Noah Vêri de Morais Franco Aleluia, 2014803
+Leonardo Perin Andreozi, 1995746
+Gustavo Rosa de Jesus, 2012734
+João Paulo Ferrari Sant'Ana, 2007857*/
+
 #include <stdio.h>
 #include <string.h>
 
@@ -63,7 +69,7 @@ void executarApp(){
         }
     }
 }
-            /*case 2:
+            case 2:
                 char cpfBuscado[11];
                 printf("Digite o CPF para buscar: (obs: digite apenas os numeros)\n");
                 scanf("%s",cpfBuscado);
@@ -97,7 +103,7 @@ void executarApp(){
            
         }
     } while(operacao != 0);
-}*/
+}
 
 void main() {
     executarApp();
