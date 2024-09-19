@@ -88,15 +88,17 @@ float calc_expodencial(float a, float b) {
     return pot;
 }
 
+float calc_formula(float x) {
+    return (x * x) - 3 + (x / 2);
+}
+
 void exec_expodencial() {
     float a = 0.0f;
     printf("A = ");
     scanf("%f", &a);
-
     float b = 0.0f;
     printf("B = ");
     scanf("%f", &b);
-
     printf("%.2f^%.2f = %.2f\n", a, b, calc_expodencial(a, b));
 }
 
