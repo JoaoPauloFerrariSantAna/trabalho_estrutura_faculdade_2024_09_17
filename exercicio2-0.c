@@ -41,7 +41,7 @@ void cadastrarFuncionario(struct Cadastro funcionarios[], int *numFuncionarios){
     // uma struct com o formulario e mandando os dados para serem armazenados
     struct Cadastro novoFuncionario;
 
-    printf("\n===================FORMULARIO===================");
+    printf("\n===================FORMULARIO===================")
 
     printf("Digite o primeiro nome: ");
     scanf("%s", novoFuncionario.primeiroNome);
@@ -55,7 +55,7 @@ void cadastrarFuncionario(struct Cadastro funcionarios[], int *numFuncionarios){
     scanf("%s", novoFuncionario.sexo);
     printf("Digite o salario: ");
     scanf("%f", &novoFuncionario.salario);
-    printf("\n=========================================================");
+    printf("\n=========================================================")
 
 // armezana o novo cadastroo na lista e coloca +1 para o numero de funcionarios, para nao passar dos 100 cadastros
     funcionarios[*numFuncionarios] = novoFuncionario;
@@ -142,3 +142,4 @@ int main() {
 
     return 0;
 }
+>>>>>>> 81e4aeeb7ad39404fff72f43e867fc7301c9c08f
