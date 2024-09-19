@@ -2,6 +2,12 @@
 
 Trabalho realizado em conjunção para realizar e obter nota na P1.
 
+## Ferramentas utilizadas
+
+### Lingugens
+
+- C
+
 ## Membros
 
 - Noah Vêri de Morais Franco Aleluia, 2014803
