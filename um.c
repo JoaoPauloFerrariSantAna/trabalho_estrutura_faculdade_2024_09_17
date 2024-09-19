@@ -23,8 +23,8 @@ int achar_primos(int numero) {
 	return numeros_primos;
 }
 
-int achar_maior(int n1, int n2, int n3) {
-    int maior = n1;
+float achar_maior(float n1, float n2, float n3) {
+    float maior = n1;
 
     if(n2 > maior) {
         maior = n2;
@@ -37,17 +37,26 @@ int achar_maior(int n1, int n2, int n3) {
     return maior;
 }
 
+void encher_mtz(int linhas, int colunas, int mtz[linhas][colunas]) {
+    for(int i = 0; i < linhas; i++) {
+		for(int j = 0; j < colunas; j++) {
+			printf("Digite um número na posição %dx%d: ", i, j);
+			scanf("%d", &mtz[i][j]);
+		}
+	}
+}
+
 void exec_maior() {
     float num1 = 0;
     float num2 = 0;
     float num3 = 0;
     printf("Digite um número: ");
-    scanf("%d", &num1);
+    scanf("%f", &num1);
     printf("Digite um segundo número: ");
-    scanf("%d", &num2);
+    scanf("%f", &num2);
     printf("Digite um terceiro número: ");
-    scanf("%d", &num3);
-    printf("Entre os três números digitados, %d é o maior\n", achar_maior(num1, num2, num3));
+    scanf("%f", &num3);
+    printf("Entre os três números digitados, %f é o maior\n", achar_maior(num1, num2, num3));
 }
 
 void calc_tabuada(float n) {
@@ -103,13 +112,7 @@ void exec_matriz() {
     int matriz[4][5];
 	int total_primos = 0;
 
-    for(int i = 0; i <= 3; i++) {
-		for(int j = 0; j <= 4; j++) {
-			printf("Digite um número na posição %dx%d: ", ++i, ++j);
-
-			scanf("%d", &matriz[i][j]);
-		}
-	}
+	encher_mtz(4, 5, matriz);
 
 	for(int i = 0; i <= 3; i++) {
 		for(int j = 0; j <= 4; j++) {
