@@ -25,30 +25,52 @@ int achar_primos(int numero) {
 
 int achar_maior(int n1, int n2, int n3) {
     int maior = n1;
-    
+
     if(n2 > maior) {
         maior = n2;
     }
-    
+
     if(n3 > maior) {
         maior = n3;
     }
-    
+
     return maior;
+}
+
+/*
+    Função que calcula a potência "b" de um número "a".
+
+    Entrada: dois números: um número e seu expoente.
+    Saida: a pontência do número.
+*/
+int potencia(int a, int b){         //Função para calcular potencia, recebe 2 parâmetros a e b
+    int pot = 1;
+
+    if(b == 0)                      //Na matemática qualquer número elevado a 0 é igual a 1
+        return 1;
+
+    if(b == 1)                      //Na matemática qualquer número elevado a 1 é igual a ele mesmo
+        return a;
+
+    for(int i = 0; i < b; i++) {    //Realiza um laço de repetição aonde a vai ser multiplicado pelo valor que b receber
+        pot = pot * a;
+    }
+
+    return pot;
 }
 
 void exec_maior() {
     int num1 = 0;
     int num2 = 0;
     int num3 = 0;
-    
+
     printf("Digite um número: ");
     scanf("%d", &num1);
     printf("Digite um segundo número: ");
     scanf("%d", &num2);
     printf("Digite um terceiro número: ");
     scanf("%d", &num3);
-    
+
     printf("Entre os três números digitados, %d é o maior\n", achar_maior(num1, num2, num3));
 }
 
@@ -58,9 +80,31 @@ void calc_tabuada(float n) {
     }
 }
 
+float calc_expodencial(float a, float b) {
+    float resultado = 1.0f;
+
+    for(float i = 0.0f; i < b; i++) {
+        resultado *= a;
+    }
+
+    return resultado;
+}
+
+void exec_expodencial() {
+    float a = 0.0f;
+    printf("A = ");
+    scanf("%f", &a);
+
+    float b = 0.0f;
+    printf("B = ");
+    scanf("%f", &b);
+
+    printf("%.2f^%.2f = %.2f\n", a, b, calc_expodencial(a, b));
+}
+
 void exec_tabuada() {
     float numero = 0.0f;
-    printf("Tabuada de qual número você quer obter?");
+    printf("Tabuada de qual número você quer obter? ");
     scanf("%f", &numero);
 
     calc_tabuada(numero);
@@ -93,24 +137,40 @@ float calc_formula(float x) {
 
 void exec_formula() {
     float x = 0.0f;
-    
+
     printf("Dê um valor para \"x\": ");
     scanf("%f", &x);
-    
+
     printf("F(%.2f) = %.2f\n", x, calc_formula(x));
 }
 
+
+
+/*
+    Função que mostra as opções: o que o usuário pode fazer no aplicativo.
+
+    Entrada: Nenhuma.
+    Saida: Nenhuma.
+*/
 void mostrar_opcoes() {
     printf("1. Calcular o maior número entre 3.\n");
+    printf("2. Calcula a expodêncial.\n");
     printf("3. Calcular uma forma: F(x) = x^2 - 3 + x / 2.\n");
     printf("4. Calcular tabuada de um número.\n");
     printf("5. Achar os números pares dentro de uma matriz 4x5\n");
     printf("0. Sair.\n");
 }
 
+
+/*
+    Função que é a função principal do aplicativo "um.c".
+
+    Entrada: Nenhuma.
+    Saida: Nenhuma, mas programa é executado.
+*/
 void executar_app() {
     int op = 0;
-    
+
     do {
         mostrar_opcoes();
 
@@ -120,9 +180,13 @@ void executar_app() {
         switch(op) {
             case 0:
             break;
-            
+
             case 1:
                 exec_maior();
+            break;
+
+            case 2:
+                exec_expodencial();
             break;
             
             case 3:
@@ -144,6 +208,13 @@ void executar_app() {
     } while(op != 0);
 }
 
+
+/*
+    Função principal do programa "um.c"
+
+    Entrada: Nada, mas irá executar a função "executar_app".
+    Saida: um número inteiro.
+*/
 int main() {
     executar_app();
     return 0;
