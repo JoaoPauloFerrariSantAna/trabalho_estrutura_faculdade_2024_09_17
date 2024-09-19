@@ -37,40 +37,16 @@ int achar_maior(int n1, int n2, int n3) {
     return maior;
 }
 
-/*
-    Função que calcula a potência "b" de um número "a".
-
-    Entrada: dois números: um número e seu expoente.
-    Saida: a pontência do número.
-*/
-int potencia(int a, int b){         //Função para calcular potencia, recebe 2 parâmetros a e b
-    int pot = 1;
-
-    if(b == 0)                      //Na matemática qualquer número elevado a 0 é igual a 1
-        return 1;
-
-    if(b == 1)                      //Na matemática qualquer número elevado a 1 é igual a ele mesmo
-        return a;
-
-    for(int i = 0; i < b; i++) {    //Realiza um laço de repetição aonde a vai ser multiplicado pelo valor que b receber
-        pot = pot * a;
-    }
-
-    return pot;
-}
-
 void exec_maior() {
-    int num1 = 0;
-    int num2 = 0;
-    int num3 = 0;
-
+    float num1 = 0;
+    float num2 = 0;
+    float num3 = 0;
     printf("Digite um número: ");
     scanf("%d", &num1);
     printf("Digite um segundo número: ");
     scanf("%d", &num2);
     printf("Digite um terceiro número: ");
     scanf("%d", &num3);
-
     printf("Entre os três números digitados, %d é o maior\n", achar_maior(num1, num2, num3));
 }
 
@@ -80,14 +56,27 @@ void calc_tabuada(float n) {
     }
 }
 
-float calc_expodencial(float a, float b) {
-    float resultado = 1.0f;
 
-    for(float i = 0.0f; i < b; i++) {
-        resultado *= a;
+/*
+    Função que calcula a potência "b" de um número "a".
+
+    Entrada: dois números: um número e seu expoente.
+    Saida: a pontência do número.
+*/
+float calc_expodencial(float a, float b) {
+    float pot = 1.0f;
+
+    if(b == 0.0f)						//Na matemática qualquer número elevado a 0 é igual a 1
+        return 1.0f;
+
+    if(b == 1.0f)						//Na matemática qualquer número elevado a 1 é igual a ele mesmo
+        return a;
+
+    for(float i = 0.0f; i < b; i++) {	//Realiza um laço de repetição aonde a vai ser multiplicado pelo valor que b receber
+        pot = pot * a;
     }
 
-    return resultado;
+    return pot;
 }
 
 void exec_expodencial() {
