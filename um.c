@@ -12,21 +12,17 @@
 */
 int achar_primos(int numero) {
 	int numeros_primos = 0;
-
 	for(int i = 1; i < numero; i++) {
 		int divisores = 0;
-
 		for(int j = 1; j < i; j++) {
 			if(i % j == 0) {
 				divisores += 1;
 			}
 		}
-
 		if(divisores <= 2) {
 			numeros_primos += 1;
 		}
 	}
-
 	return numeros_primos;
 }
 
@@ -41,15 +37,12 @@ int achar_primos(int numero) {
 */
 float achar_maior(float n1, float n2, float n3) {
     float maior = n1;
-
     if(n2 > maior) {
         maior = n2;
     }
-
     if(n3 > maior) {
         maior = n3;
     }
-
     return maior;
 }
 
@@ -72,7 +65,6 @@ void encher_mtz(int linhas, int colunas, int mtz[linhas][colunas]) {
 		}
 	}
 }
-
 
 /*
 	Função que calcula a tabuada de do número real "n" e a mostra.
@@ -101,17 +93,13 @@ void calc_tabuada(float n) {
 */
 float calc_expodencial(float a, float b) {
     float pot = 1.0f;
-
     if(b == 0.0f)						//Na matemática qualquer número elevado a 0 é igual a 1
         return 1.0f;
-
     if(b == 1.0f)						//Na matemática qualquer número elevado a 1 é igual a ele mesmo
         return a;
-
     for(float i = 0.0f; i < b; i++) {	//Realiza um laço de repetição aonde a vai ser multiplicado pelo valor que b receber
         pot = pot * a;
     }
-
     return pot;
 }
 
@@ -146,7 +134,6 @@ void exec_maior() {
     scanf("%f", &num3);
     printf("Entre os três números digitados, %.2f é o maior\n", achar_maior(num1, num2, num3));
 }
-
 
 /*
 	Função que irá perguntar sobre um número "a" e seu expoente "b".
@@ -188,15 +175,12 @@ void exec_tabuada() {
 void exec_matriz() {
     int matriz[4][5];
 	int total_primos = 0;
-
 	encher_mtz(4, 5, matriz);
-
 	for(int i = 0; i <= 3; i++) {
 		for(int j = 0; j <= 4; j++) {
 			total_primos += achar_primos(matriz[i][j]);
 		}
 	}
-
 	printf("Nesta matriz 4x5 temos um total de %d números primos.\n", total_primos);
 }
 
@@ -230,7 +214,6 @@ void mostrar_opcoes() {
     printf("0. Sair.\n");
 }
 
-
 /*
     Função principal do programa "um.c".
 
@@ -239,44 +222,34 @@ void mostrar_opcoes() {
 */
 void executar_app() {
     int op = 0;
-
     do {
         mostrar_opcoes();
-
         printf(">>> ");
         scanf("%d", &op);
-
         switch(op) {
             case 0:
             break;
-
             case 1:
                 exec_maior();
             break;
-
             case 2:
                 exec_expodencial();
             break;
-            
             case 3:
                 exec_formula();
             break;
-
             case 4:
                 exec_tabuada();
             break;
-            
             case 5:
                 exec_matriz();
             break;
-
             default:
                 printf("Opção \"%d\" desconhecida.", op);
             break;
         }
     } while(op != 0);
 }
-
 
 /*
     Função principal do programa "um.c"
