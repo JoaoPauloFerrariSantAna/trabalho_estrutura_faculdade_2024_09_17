@@ -4,7 +4,7 @@ Trabalho realizado em conjunção para realizar e obter nota na P1.
 
 ## Ferramentas utilizadas
 
-### Lingugens
+### Linguagens
 
 - C
 
